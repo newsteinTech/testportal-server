@@ -7,9 +7,8 @@ export const testRoutes: Router = Router();
 let testControllerObj = new TestController();
 
 testRoutes.post('/bookTest', testControllerObj.bookTest)
-testRoutes.post('/login', testControllerObj.login)
-testRoutes.post('/startTest', Authenticate.authenticate, testControllerObj.startTest)
-testRoutes.post('/generateTest', Authenticate.authenticate, testControllerObj.createTest)
-testRoutes.post('/submit', Authenticate.authenticate, testControllerObj.submitAnswer)
+testRoutes.post('/admin/login', testControllerObj.login)
+testRoutes.post('/startTest', testControllerObj.startTest)
+testRoutes.post('/submit', testControllerObj.submitOrSkipAnswer)
 
 

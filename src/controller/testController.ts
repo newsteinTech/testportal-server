@@ -24,17 +24,16 @@ export class TestController{
         res.send(result);
     }
 
-    public async submitAnswer(req:Request, res:Response, next:any){
+    public async submitOrSkipAnswer(req:Request, res:Response, next:any){
 
-        Authenticate.authorize(req, res, next, Actiontype.submitAnswer)
-        let result= await TestService.submitAnswer(req); 
+        //Authenticate.authorize(req, res, next, Actiontype.submitAnswer)
+        let result= await TestService.submitOrSkipAnswer(req); 
         res.send(result);
     }
 
-    public async createTest(req: Request, res:Response, next: any){
+    /*public async createTest(req: Request, res:Response, next: any){
     
-        Authenticate.authorize(req, res, next, Actiontype.createTest)
-        let result= await TestService.createTest(req); 
+        let result= await TestService.createTest(); 
         res.send(result);
-    }
+    }*/
 }

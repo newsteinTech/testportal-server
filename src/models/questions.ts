@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 export const questionSchema = new  mongoose.Schema({
+  
     "statement": {type: String, required:true, unique: true},
     "optionA": {type: String, required:true},
     "optionB": {type: String, required:true},

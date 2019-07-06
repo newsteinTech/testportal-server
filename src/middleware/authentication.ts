@@ -20,9 +20,9 @@ public static async authenticate(req:any, res:Response, next:any){
     catch(error){
         res.status(401).send("Bad Request, access denied");
     }
- }
+}
 
- public static authorize(req:any , res:Response, next: any, action: Actiontype){
+public static authorize(req:any , res:Response, next: any, action: Actiontype){
 
     switch(req.user.role){
         case "Admin":
@@ -35,7 +35,7 @@ public static async authenticate(req:any, res:Response, next:any){
               return res.status(401).send("You don't have permissions to perform this action")
             }
         
-        case "User":
+        /*case "User":
             let result2= rolePermissions.User.Permissions.indexOf(action)
             if(result2>=0){
                 return true;
@@ -43,7 +43,7 @@ public static async authenticate(req:any, res:Response, next:any){
             }
             else{
                 return res.status(401).send("You don't have permissions to perform this action")
-            }
+            }*/
             
         default:
             return res.status(401).send("You don't have permissions to perform this action")

@@ -12,8 +12,7 @@ export const testSchema = new  mongoose.Schema({
     "questionId": [{
         type: Schema.Types.ObjectId,
         ref: 'questionDetails', 
-        required: true, 
-        unique:true
+        required: true
     }],
     "answerSubmitted": [{
         type: Number, 
@@ -25,14 +24,12 @@ export const testSchema = new  mongoose.Schema({
         default: Date.now
     },
     "score": {
-        type: Number, 
-        required: true
+        type: Number
     },
     "paymentRef": String,
     "currentQuestion": {
         type: Number, 
-        default: 1, 
-        required: true
+        //required: true
     }
 })
 
