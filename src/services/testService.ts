@@ -5,7 +5,6 @@ import { ResponseModel } from "../helper/responseModel"
 import { testModel } from "../models/test";
 import { questionModel } from "../models/questions";
 import * as nodemailer from "nodemailer";
-import { exec } from "child_process";
 
 export class TestService {
 
