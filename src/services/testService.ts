@@ -6,7 +6,6 @@ import { testModel } from "../models/test";
 import { questionModel } from "../models/questions";
 import * as nodemailer from "nodemailer";
 import { exec } from "child_process";
-import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from "constants";
 
 export class TestService {
 
