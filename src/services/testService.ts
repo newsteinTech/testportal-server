@@ -66,8 +66,14 @@ export class TestService {
 
    public static async startTest(req: any) {
 
-      try {
+      try{
 
+         // if test booked by user has expired
+         let user: any= await userModel.findOne({'mobile': req.body.mobile}).exec();
+         if((Date.now()-user.testBoookedDate)>7){
+            return("Your test has expired, please book another one!")
+         }
+         
          // find the test for the user based on the code provided in the body
          let test: any = await testModel.findOne({ 'testTakenBy': req.body.code }).exec();
 
@@ -86,7 +92,7 @@ export class TestService {
             'testTakenBy': test.testTakenBy,
             'questionindex': test.currentQuestion, 'status': test.testStatus,
             'question': { 'questionid': q._id, 'statement': q.statement, 'optionA': q.optionA, 'optionB': q.optionB, 'optionC': q.optionC, 'optionD': q.optionD }
-         })
+           })
          }
          //If user has already completed the test
          else if (test.testStatus == "completed") {
