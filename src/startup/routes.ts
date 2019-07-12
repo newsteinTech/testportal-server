@@ -3,6 +3,7 @@ import {testRoutes} from "../routes/testRoutes"
 import {userRoutes} from "../routes/userRoutes"
 import {questionRoutes} from "../routes/questionRoutes"
 import {Authentication} from "../middleware/authentication"
+import { actualtestRoutes } from "../routes/actualTestRoutes";
 
 export class Routes {
 
@@ -14,5 +15,6 @@ export class Routes {
         app.use("/api/test",testRoutes)
         app.use("/api/user",userRoutes)
         app.use("/api/question",Authentication.authenticate,questionRoutes)
+        app.use("/api/actualTest",actualtestRoutes)
     }
 }
