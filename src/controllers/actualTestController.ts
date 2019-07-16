@@ -16,4 +16,28 @@ export class actualTestController {
         res.send(ResponseModel.getValidResponse(Result))
         }
     }
+
+    public async start (req:Request,res:Response){
+
+        let Result = await actualTestService.start(req)
+        console.log(Result)
+        if(Result.type == "error"){
+            res.send(ResponseModel.getInValidResponse(Result))
+        }
+        else{
+        res.send(ResponseModel.getValidResponse(Result))
+        }
+    }
+
+    public async submit (req:Request,res:Response){
+
+        let Result = await actualTestService.submit(req)
+        console.log(Result)
+        if(Result.type == "error"){
+            res.send(ResponseModel.getInValidResponse(Result))
+        }
+        else{
+        res.send(ResponseModel.getValidResponse(Result))
+        }
+    }
 }

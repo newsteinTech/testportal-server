@@ -21,7 +21,7 @@ const testSchema = new mongoose.Schema({
         type : Date
     },
     answers : [{
-        type : Boolean,
+        type : Number,
     }],
     score : {
         type : Number,
@@ -33,7 +33,8 @@ const testSchema = new mongoose.Schema({
     },
     paymentRef : {
         type : String,
-        required : true
+        required : true,
+        unique : true
     },
     currentQuestion : {
         type : Number,
